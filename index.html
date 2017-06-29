@@ -213,15 +213,20 @@
 
 <div class="post-preview">
 
-    <a href="/2017/06/29/text/">
+    <a href="/2017/06/29/textField/">
         <h2 class="post-title">
-            text
+            textField
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            ...
+            TextField判断高亮状态(用于搜索)今天在做搜索的时候用搜狗输入法时用TextField的代理就可以实时获取text
+
+这个方法可以完美解决text的实时监听,但是切换系统键盘的时候系统键盘会默认将字母先显示到textField上面,此时这个方法就不管用了,这时我们将用下面的方法通过判断键盘的高亮状态就可以获得你想要的text
+
+增加改变的方法
+这样我们就完美解决了系统键盘和第三方键盘......
         </div>
     </a>
     
@@ -230,6 +235,8 @@
             2017-06-29
         </p>
         <div class="tags">
+            
+              <a href="/tags/#TextField" title="TextField">TextField</a>
             
         </div>
     
@@ -303,6 +310,8 @@
         
             
         
+            
+        
     </div>
 </section>
 
@@ -364,7 +373,7 @@
     <ul>
       
         <li>
-          <a href="/2017/06/29/text/">text</a>
+          <a href="/2017/06/29/textField/">textField</a>
         </li>
       
         <li>
