@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          WebView嵌入小坑以及js交互 - KillifishY &#39;s Blog
+          Objective-C高级编程 多线程与内存管理总结 - KillifishY &#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2015/12/15/WebView嵌入小坑以及js交互/">
+    <link rel="canonical" href="http://yoursite-url/2016/02/20/多线程与内存管理/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,16 +90,16 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#WebView" title="WebView">WebView</a>
+                              <a class="tag" href="/tags/#多线程" title="多线程">多线程</a>
                             
-                              <a class="tag" href="/tags/#javascrip" title="javascrip">javascrip</a>
+                              <a class="tag" href="/tags/#内存管理" title="内存管理">内存管理</a>
                             
                         </div>
-                        <h1>WebView嵌入小坑以及js交互</h1>
+                        <h1>Objective-C高级编程 多线程与内存管理总结</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by KillifishY on
-                            2015-12-15
+                            2016-02-20
                         </span>
                     </div>
                 
@@ -216,30 +216,34 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="WebView嵌入小坑以及js交互"><a href="#WebView嵌入小坑以及js交互" class="headerlink" title="WebView嵌入小坑以及js交互"></a>WebView嵌入小坑以及js交互</h1><p>今天在app内嵌入一个H5页面一开始就遇到了问题,网页的页面太大了 ,我使用scalesPageToFit这个方法以及下面的方法算是解决了,刚刚解决又出现了问题</p>
-<p><img src="/2015/12/15/WebView嵌入小坑以及js交互/1.png" alt=""></p>
-<p>它可以随意拖动或者滑动,这个问题很让我苦恼,我使用了很多方法并没有什么用,最后找到了一个 <strong>_webView.scrollView.bouncesZoom = NO</strong> 这个方法算是解决了</p>
-<p>下午的时候又发现双击还可以放大,上网上找了很多方法都没有什么卵用,坑爹啊最后没有办法我只能用vpn上google一下了,看了好多最后终于让我找到了</p>
-<pre><code>_webView.multipleTouchEnabled=NO
-
-- (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView {
-
-returnnil;
-
+                <h1 id="Objective-C高级编程-多线程与内存管理总结"><a href="#Objective-C高级编程-多线程与内存管理总结" class="headerlink" title="Objective-C高级编程 多线程与内存管理总结"></a>Objective-C高级编程 多线程与内存管理总结</h1><p>1.Objective-C高级编程 多线程与内存管理这本书是我一年前看的有些忘了,过年了有时间总结一个 方便以后回顾.</p>
+<p>2.第一章主要是讲内存管理感觉比较简单不想记录了,第二章是block(C语言的扩充功能)即带有自变量的的匿名函数.   </p>
+<p><strong>____block</strong><br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <strong>Block</strong> 语法的表达式中将值赋给在<strong>Block</strong>语法外声明的自动变量,需要在该自动变量上附加<strong>__block</strong>说明符.</p>
+<p><strong>Block循环引用</strong>   </p>
+<p><strong>Block</strong>中使用附有<strong>____strong</strong>修饰符的对象类型自动变量,那么当<strong>Block</strong>从栈复制到堆时,该对象为<strong>Blcok</strong>所持有.为了避免循环引用可声明附有<strong>____weak</strong>修饰符的变量将self赋值使用例如:id <strong>weak tmp = self;<br>比较</strong>block.<strong>weak.</strong>unsafe_unretained修饰符避免循环引用<br>使用__block变量的有点如下:</p>
+<ul>
+<li>通过__block变量可控制对象的持有期间</li>
+<li>在不能使用<strong>weak修饰符的环境中使用</strong>unsafe_unretained修饰符即可在执行Blcok时可动态的决定是否将nil或其他对象赋值在<strong>block变量中<br>使用</strong>block的缺点如下:</li>
+<li>为避免循环引用必须执行Block    </li>
+</ul>
+<p>–</p>
+<h1 id="多线程-GCD"><a href="#多线程-GCD" class="headerlink" title="多线程(GCD)"></a>多线程(GCD)</h1><p>1.UI界面的更新一定要在主线程处理,多线程中处理例如数据库的访问,图像识别等</p>
+<p>2.使用多线程需要注意<strong>数据竞争,死锁,使用过多消耗内存</strong>等.</p>
+<p>3.多线程处理数主要取决于<strong>cpu核数</strong>以及<strong>cpu负荷</strong>等</p>
+<p>4.<strong>dispatch_set_target_queue</strong>可以防止处理并行执行</p>
+<p>5.<strong>dispatch_after</strong>不是在指定时间后执行处理,而只是在指定时间追加处理到dispatch queue</p>
+<p>6.<strong>dispatch_barrier_async</strong>函数会等待追加到Concurrent Dispatch Queue上的并行执行的处理全部结束之后,再将指定的处理追加到该 <strong>Concurrent Dispatch Queue</strong>中.然后dispatch_barrier_async函数追加的处理执行完毕后,Concurrent Dispatch Queue恢复为一般动作.使用Concurrent Dispatch Queue和dispatch_barrier_async函数可实现高效率的数据库访问和文件访问.</p>
+<p>7.<strong>dispatch_suspend/dispatch_resume</strong>(对以执行的处理没有影响)<br><strong>dispatch_suspend</strong>可以将没有执行的挂起,挂起后追加到Dispatch Queue中但未执行的处理在此之后停止执行.恢复后则可以继续执行</p>
+<p>8.Dispatch Semaphore(信号)<br>可以更细粒度的进行排他控制<br>例:</p>
+<pre><code>dispatch_semaphore_t semaphore =   dispatch_semaphore_creat(1);
+dispatch_async(queue,^{
+  dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER );
+ dispatch_semaphore_signal(semaphore);
 }
-</code></pre><p>这两个方法完美解决了双击放大的问题.</p>
-<p><strong>下面就是调用H5了其实很简单只要跟后端约定好接口调用下面方法即可</strong></p>
-<p><img src="/2015/12/15/WebView嵌入小坑以及js交互/2.png" alt=""></p>
-<p>其他地方调用H5接口只需调用<strong>WebView</strong>的<strong>stringByEvaluatingJavaScriptFromString</strong>方法可以解决大部分问题.</p>
-<p>H5前端接口约定如下(例子)</p>
-<pre><code>functionsendCommand(cmd,param){
+dispathc_release(semaphore);
+</code></pre><p>9.dispatch_once(用于单例)</p>
+<p>10.网络下载处理不适用GCD,网络编程中不可使用线程,使用用于异步网络通信的API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </p>
 
-varurl=&quot;newle:&quot;+cmd+&quot;:&quot;+param;
-
-document.location = url;
-
-}
-</code></pre>
                 
 
                 <hr>
@@ -247,13 +251,9 @@ document.location = url;
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2015/12/10/textField/" data-toggle="tooltip" data-placement="top" title="TextField判断高亮状态(用于搜索)">&larr; Previous Post</a>
+                            <a href="/2015/12/15/WebView嵌入小坑以及js交互/" data-toggle="tooltip" data-placement="top" title="WebView嵌入小坑以及js交互">&larr; Previous Post</a>
                         </li>
                     
-                    
-                        <li class="next">
-                            <a href="/2016/02/20/多线程与内存管理/" data-toggle="tooltip" data-placement="top" title="Objective-C高级编程 多线程与内存管理总结">Next Post &rarr;</a>
-                        </li>
                     
                 </ul>
 
@@ -277,6 +277,17 @@ document.location = url;
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Objective-C高级编程-多线程与内存管理总结"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Objective-C高级编程 多线程与内存管理总结</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#多线程-GCD"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">多线程(GCD)</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
             <!-- Sidebar Container -->
             <div class="
@@ -291,9 +302,9 @@ document.location = url;
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#WebView" title="WebView">WebView</a>
+                          <a class="tag" href="/tags/#多线程" title="多线程">多线程</a>
                         
-                          <a class="tag" href="/tags/#javascrip" title="javascrip">javascrip</a>
+                          <a class="tag" href="/tags/#内存管理" title="内存管理">内存管理</a>
                         
                     </div>
                 </section>
@@ -322,8 +333,8 @@ document.location = url;
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://yoursite-url/2015/12/15/WebView嵌入小坑以及js交互/";
-    var disqus_url = "http://yoursite-url/2015/12/15/WebView嵌入小坑以及js交互/";
+    var disqus_identifier = "http://yoursite-url/2016/02/20/多线程与内存管理/";
+    var disqus_url = "http://yoursite-url/2016/02/20/多线程与内存管理/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

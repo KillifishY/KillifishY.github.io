@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/">
+    <link rel="canonical" href="http://yoursite-url/archives/2016/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,8 +69,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/header_img/home-bg-2-dark.png') 
-            /*config*/
+            background-image: url('/undefined')
+            /*page*/
         
     }
     
@@ -208,117 +208,86 @@
                 post-container
             ">
             
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2016/02/20/多线程与内存管理/">
-        <h2 class="post-title">
-            Objective-C高级编程 多线程与内存管理总结
-        </h2>
-        <h3 class="post-subtitle">
+                
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 归档列表 -->
             
-        </h3>
-        <div class="post-content-preview">
-            Objective-C高级编程 多线程与内存管理总结1.Objective-C高级编程 多线程与内存管理这本书是我一年前看的有些忘了,过年了有时间总结一个 方便以后回顾.
-2.第一章主要是讲内存管理感觉比较简单不想记录了,第二章是block(C语言的扩充功能)即带有自变量的的匿名函数.   
-____block                                         ......
+            
+
+             <!-- 归档列表 -->
+
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2016">
+                    <span class="tag-text">2016</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    02-20
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2016/02/20/多线程与内存管理/" style="color: #0085a1">
+                        <span>
+                            Objective-C高级编程 多线程与内存管理总结
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                </ul>
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2015">
+                    <span class="tag-text">2015</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    12-15
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2015/12/15/WebView嵌入小坑以及js交互/" style="color: #0085a1">
+                        <span>
+                            WebView嵌入小坑以及js交互
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    12-10
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2015/12/10/textField/" style="color: #0085a1">
+                        <span>
+                            TextField判断高亮状态(用于搜索)
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                </ul>
+            </div>
+            
+
+
         </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by KillifishY on
-            2016-02-20
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#多线程" title="多线程">多线程</a>
-            
-              <a href="/tags/#内存管理" title="内存管理">内存管理</a>
-            
-        </div>
-    
-
+    </div>
 </div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/15/WebView嵌入小坑以及js交互/">
-        <h2 class="post-title">
-            WebView嵌入小坑以及js交互
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            WebView嵌入小坑以及js交互今天在app内嵌入一个H5页面一开始就遇到了问题,网页的页面太大了 ,我使用scalesPageToFit这个方法以及下面的方法算是解决了,刚刚解决又出现了问题
-
-它可以随意拖动或者滑动,这个问题很让我苦恼,我使用了很多方法并没有什么用,最后找到了一个 _webView.scrollView.bouncesZoom = NO 这个方法算是解决了
-下午的时候又......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by KillifishY on
-            2015-12-15
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#WebView" title="WebView">WebView</a>
-            
-              <a href="/tags/#javascrip" title="javascrip">javascrip</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/10/textField/">
-        <h2 class="post-title">
-            TextField判断高亮状态(用于搜索)
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            TextField判断高亮状态(用于搜索)今天在做搜索的时候用搜狗输入法时用TextField的代理就可以实时获取text
-
-这个方法可以完美解决text的实时监听,但是切换系统键盘的时候系统键盘会默认将字母先显示到textField上面,此时这个方法就不管用了,这时我们将用下面的方法通过判断键盘的高亮状态就可以获得你想要的text
-
-增加改变的方法
-这样我们就完美解决了系统键盘和第三方键盘......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by KillifishY on
-            2015-12-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#TextField" title="TextField">TextField</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
 
                 <!-- 如果开启评论功能 -->
                 
