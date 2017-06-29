@@ -136,13 +136,6 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -151,6 +144,13 @@
                         
                         <li>
                             <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -210,6 +210,69 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2017/06/29/内存泄露检测/">
+        <h2 class="post-title">
+            内存泄露检测
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            MLeaksFinder今天发现一个非常好用的内存泄露方案,比Instrument要好用很多,MLeaksFinder 的使用很简单，参照MLeaksFinder
+，只要pod ‘MLeaksFinder’就可以在运行时（debug 模式下）帮助你检测项目里的内存泄露了，无需修改任何业务逻辑代码，而且只在 debug 下开启，完全不影响你的 release 包。
+当内存泄露的时候就会Aler......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by KillifishY on
+            2017-06-29
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#内存泄露" title="内存泄露">内存泄露</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2017/06/29/xcode/">
+        <h2 class="post-title">
+            xcode
+        </h2>
+        <h3 class="post-subtitle">
+            xcode
+        </h3>
+        <div class="post-content-preview">
+            #xcode模拟器不显示 只显示My mac
+今天一上班突然就只显示My mac 不能显示模拟器了,在这里记录一下,给出解决方案是:
+1、首先关闭你的Xcode，找到你出现解决此问题的项目目录下，然后此项目的*.xcodeproj 文件，然后右键选择“显示包内容”
+
+2、找到这个xcuserdata文件夹删除掉，OK，重新打开你的项目，则正常显示可使用的Simulator；
+如果这些都没有用......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by KillifishY on
+            2017-06-29
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#xcode" title="xcode">xcode</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -421,6 +484,10 @@ ____block                                         ......
         
             
         
+            
+        
+            
+        
     </div>
 </section>
 
@@ -482,6 +549,14 @@ ____block                                         ......
     <ul>
       
         <li>
+          <a href="/2017/06/29/内存泄露检测/">内存泄露检测</a>
+        </li>
+      
+        <li>
+          <a href="/2017/06/29/xcode/">xcode</a>
+        </li>
+      
+        <li>
           <a href="/2016/03/18/第一次将本地代码提交到GitHhub远程仓库/">第一次将本地代码提交到GitHub远程仓库</a>
         </li>
       
@@ -491,14 +566,6 @@ ____block                                         ......
       
         <li>
           <a href="/2016/02/20/多线程与内存管理/">Objective-C高级编程 多线程与内存管理总结</a>
-        </li>
-      
-        <li>
-          <a href="/2015/12/15/WebView嵌入小坑以及js交互/">WebView嵌入小坑以及js交互</a>
-        </li>
-      
-        <li>
-          <a href="/2015/12/10/textField/">TextField判断高亮状态(用于搜索)</a>
         </li>
       
     </ul>
