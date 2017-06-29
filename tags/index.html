@@ -200,11 +200,11 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                    <a href="#TextField" title="TextField" rel="1">TextField</a>
+                    <a href="#TextField" title="TextField" rel="2">TextField</a>
                 
-                    <a href="#First" title="First" rel="1">First</a>
+                    <a href="#First" title="First" rel="0">First</a>
                 
-                    <a href="#Blog" title="Blog" rel="1">Blog</a>
+                    <a href="#Blog" title="Blog" rel="0">Blog</a>
                 
             </div>
 
@@ -231,6 +231,21 @@
                 </div>
                 <hr>
                 
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/12/10/欢迎来到我的博客/">
+                        <h2 class="post-title">
+                            TextField判断高亮状态(用于搜索)
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
             </div>
             
             <div class="one-tag-list">
@@ -238,50 +253,12 @@
                     <span class="tag-text">First</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/04/26/欢迎来到我的博客/">
-                        <h2 class="post-title">
-                            我的第一篇博客
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                这是我的第一篇博客
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
             </div>
             
             <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Blog">
                     <span class="tag-text">Blog</span>
                 </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/04/26/欢迎来到我的博客/">
-                        <h2 class="post-title">
-                            我的第一篇博客
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                这是我的第一篇博客
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
                 
             </div>
             
