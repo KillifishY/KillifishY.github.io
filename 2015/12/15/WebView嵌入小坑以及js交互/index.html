@@ -232,14 +232,8 @@ returnnil;
 <p><img src="/2015/12/15/WebView嵌入小坑以及js交互/2.png" alt=""></p>
 <p>其他地方调用H5接口只需调用<strong>WebView</strong>的<strong>stringByEvaluatingJavaScriptFromString</strong>方法可以解决大部分问题.</p>
 <p>H5前端接口约定如下(例子)</p>
-<pre><code>functionsendCommand(cmd,param){
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">functionsendCommand(cmd,param)&#123;</div><div class="line"></div><div class="line">varurl=<span class="string">"newle:"</span>+cmd+<span class="string">":"</span>+param;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.location = url;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-varurl=&quot;newle:&quot;+cmd+&quot;:&quot;+param;
-
-document.location = url;
-
-}
-</code></pre>
                 
 
                 <hr>
